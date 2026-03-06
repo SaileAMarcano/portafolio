@@ -111,6 +111,10 @@ body {
     transition: 0.3s ease;
 }
 
+.btn-movil {
+    display: none; /* Oculto en computadoras */
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex; 
@@ -137,7 +141,17 @@ body {
     .navbar .btn-primary {
         display: none; 
     }
+
+    .btn-escritorio {
+        display: none; 
+    }
+
+    .btn-movil {
+        display: block;
+        margin-top: 20px; 
+    }
 }
+
 
 /* =========================================
    HERO SECTION (DISEÑO BASE / CELULARES)
@@ -234,10 +248,27 @@ body {
     }
 
     .hero-content {
+        background-image: 
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+            url('Img/fondo.png');
+        
+        /* 2. Propiedades de fondo para cubrir y centrar */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        /* 3. Centramos el texto verticalmente en esta mitad */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        /* 4. Ajustamos los espacios para que respiren */
         padding-left: 10%; 
         padding-right: 5%;
         margin-bottom: 0;
-        align-self: center; 
+        align-self: initial; /* Anulamos el alineado antiguo */
+        height: 100%; /* Para que llene todo el alto de su mitad */
+        max-width: none; /* Quitamos el ancho máximo para que la foto llegue al borde */
     }
 
     .hero-image {
@@ -249,7 +280,6 @@ body {
 /* =========================================
    MODAL DE CONTACTO (TARJETA FLOTANTE)
    ========================================= */
-/* El fondo oscuro que cubre toda la pantalla */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -257,33 +287,29 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(4px); /* Difumina lo que hay detrás */
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Para que quede por encima de absolutamente todo */
-    
-    /* Oculto por defecto */
+    z-index: 1000; 
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
 }
 
-/* Clase que JavaScript agregará para mostrarlo */
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* La tarjeta morada/oscura en sí */
 .modal-content {
-    background-color: #111; /* Un gris muy oscuro, casi negro */
+    background-color: #111; 
     padding: 40px;
     border-radius: 16px;
     width: 90%;
     max-width: 450px;
     position: relative;
-    border: 1px solid rgba(128, 49, 218, 0.3); /* Borde de tu color morado */
+    border: 1px solid rgba(128, 49, 218, 0.3); 
     box-shadow: 0 20px 50px rgba(0,0,0,0.7);
     
     /* Efecto de que entra desde abajo */
@@ -295,7 +321,6 @@ body {
     transform: translateY(0);
 }
 
-/* Botón de cerrar la X */
 .close-modal {
     position: absolute;
     top: 15px;
@@ -312,7 +337,6 @@ body {
     color: var(--accent);
 }
 
-/* Estilos de los textos y el formulario */
 .modal-content h2 {
     font-size: 2rem;
     margin-bottom: 10px;
