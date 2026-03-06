@@ -164,8 +164,15 @@ body {
 }
 
 .hero-content {
+    background-image: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+        url('Img/fondo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 60px 5% 40px 5%; 
     max-width: 800px;
+    width: 100%;
 }
 
 .greeting {
@@ -251,24 +258,18 @@ body {
         background-image: 
             linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
             url('Img/fondo.png');
-        
-        /* 2. Propiedades de fondo para cubrir y centrar */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-
-        /* 3. Centramos el texto verticalmente en esta mitad */
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-        /* 4. Ajustamos los espacios para que respiren */
         padding-left: 10%; 
         padding-right: 5%;
         margin-bottom: 0;
-        align-self: initial; /* Anulamos el alineado antiguo */
-        height: 100%; /* Para que llene todo el alto de su mitad */
-        max-width: none; /* Quitamos el ancho máximo para que la foto llegue al borde */
+        align-self: initial;
+        height: 100%; 
+        max-width: none;
     }
 
     .hero-image {
