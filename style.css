@@ -369,7 +369,7 @@ body {
    SECCIÓN DE PROYECTOS
    ========================================= */
 .projects-section {
-    padding: 80px 5%; /* Espacio arriba/abajo y a los lados */
+    padding: 80px 5%;
 }
 
 .projects-container {
@@ -385,24 +385,21 @@ body {
     letter-spacing: 1px;
 }
 
-/* La cuadrícula (Grid) */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 sola columna en celulares */
-    gap: 40px; /* Espacio entre las tarjetas */
+    grid-template-columns: 1fr; 
+    gap: 40px; 
 }
 
-/* Para Computadoras: 2 columnas */
 @media (min-width: 769px) {
     .projects-grid {
         grid-template-columns: 1fr 1fr; 
     }
 }
 
-/* --- ESTILOS DE LA TARJETA BASE --- */
 .project-card {
-    background-color: #0c0b0b; /* Apenas un poco más claro que el fondo negro */
-    border: 1px solid rgba(128, 49, 218, 0.2); /* Borde morado sutil */
+    background-color: #0c0b0b; 
+    border: 1px solid rgba(128, 49, 218, 0.2);
     border-radius: 16px;
     padding: 30px;
     display: flex;
@@ -411,8 +408,8 @@ body {
 }
 
 .project-card:hover {
-    transform: translateY(-5px); /* Se levanta un poco */
-    box-shadow: 0 10px 30px rgba(128, 49, 218, 0.15); /* Brillo morado */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(128, 49, 218, 0.15);
     border-color: rgba(128, 49, 218, 0.6);
 }
 
@@ -421,7 +418,7 @@ body {
     margin-bottom: 15px;
     line-height: 1;
     display: flex;
-    justify-content: space-between; /* Separa el título de la etiqueta WIP */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -437,15 +434,13 @@ body {
 .project-image-wrapper img {
     width: 100%;
     height: 100%;
-    /* 1. CAMBIAMOS COVER POR CONTAIN */
     object-fit: contain; 
-    /* 2. CENTRAMOS LA IMAGEN PARA QUE QUEDE PERFECTA */
     object-position: center; 
     transition: transform 0.5s ease;
 }
 
 .project-card:hover .project-image-wrapper img {
-    transform: scale(1.05); /* Efecto zoom lento al pasar el mouse */
+    transform: scale(1.05);
 }
 
 .project-desc {
@@ -454,10 +449,9 @@ body {
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 25px;
-    flex-grow: 1; /* Esto empuja los botones siempre al final de la tarjeta */
+    flex-grow: 1;
 }
 
-/* --- ETIQUETAS DE TECNOLOGÍA (Píldoras) --- */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -481,9 +475,8 @@ body {
     flex-wrap: wrap;
 }
 
-/* --- ESTILOS ESPECIALES PARA EL PROYECTO "EN DESARROLLO" (WIP) --- */
 .wip-card {
-    border-style: dashed; /* Borde punteado */
+    border-style: dashed; 
     border-width: 2px;
     border-color: rgba(255, 255, 255, 0.2);
     background-color: transparent;
@@ -491,7 +484,7 @@ body {
 
 .wip-card:hover {
     border-color: var(--text-muted);
-    box-shadow: none; /* Quitamos el brillo morado a esta para que no quite protagonismo al proyecto principal */
+    box-shadow: none; 
 }
 
 .badge {
@@ -501,13 +494,11 @@ body {
     letter-spacing: 0;
 }
 
-/* Hace borrosa la imagen */
 .wip-card .project-image-wrapper img {
     filter: grayscale(100%) blur(4px); 
     opacity: 0.5;
 }
 
-/* Texto de Coming Soon encima de la foto borrosa */
 .overlay-text {
     position: absolute;
     top: 50%;
@@ -521,7 +512,6 @@ body {
     width: 100%;
 }
 
-/* Botón desactivado visualmente */
 .disabled {
     pointer-events: none; 
     opacity: 0.4;
